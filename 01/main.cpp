@@ -3,13 +3,11 @@
 #include <vector>
 #include <algorithm>
 
-using namespace std;
-
-vector<int> readFile(string fileName)
+std::vector<int> readFile(std::string fileName)
 {
-    vector<int> res;
-    ifstream readStream;
-    readStream.open(fileName, ios::in);
+    std::vector<int> res;
+    std::ifstream readStream;
+    readStream.open(fileName, std::ios::in);
     int number;
     while (readStream >> number)
     {
@@ -19,7 +17,7 @@ vector<int> readFile(string fileName)
     return res;
 }
 
-long part1(vector<int> &arr)
+long part1(std::vector<int> &arr)
 {
     const size_t n = arr.size();
 
@@ -45,7 +43,7 @@ long part1(vector<int> &arr)
     return -1;
 }
 
-long part2(vector<int> &arr)
+long part2(std::vector<int> &arr)
 {
     const size_t n = arr.size();
     // // O(n^3)
@@ -78,7 +76,7 @@ long part2(vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = readFile("input.txt");
+    std::vector<int> arr = readFile("input.txt");
     long res = part1(arr);
     printf("Result : %d\n", res);
     return 0;
